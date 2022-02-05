@@ -37,7 +37,8 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func stepValueChanged(_ sender: UIStepper) {
-        
+        splitNumberlabel.text = Int(sender.value).description
+        print(splitNumberlabel.text)
     }
     
     
