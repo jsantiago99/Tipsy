@@ -56,11 +56,18 @@ class CalculatorViewController: UIViewController {
             splitTotal = billTotal! / Double(splitNumberlabel.text!)!
             
             print(String(format: "%.2f", splitTotal!))
-            
+            performSegue(withIdentifier: "goToResult", sender: self)
             
         }
-         
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goToResult") {
+            let destinationVC = segue.destination as! ResultsViewController
+            destinationVC.totalValue = String(format: "%.2f", splitTotal!)
+            destinationVC.settingsValue = "It works"
+            
+        }
     }
 
 }
