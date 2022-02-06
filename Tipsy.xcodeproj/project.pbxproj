@@ -13,6 +13,8 @@
 		ADB6895A2326708D006D4E2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB689582326708D006D4E2B /* Main.storyboard */; };
 		ADB6895C2326708E006D4E2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB6895B2326708E006D4E2B /* Assets.xcassets */; };
 		ADB6895F2326708E006D4E2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB6895D2326708E006D4E2B /* LaunchScreen.storyboard */; };
+		BF08550227AF7D7300718E94 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08550127AF7D7300718E94 /* Bill.swift */; };
+		BF08550527AF7E2400718E94 /* BillBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08550427AF7E2400718E94 /* BillBrain.swift */; };
 		BF4C1D9827AE235A00F8268C /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C1D9727AE235A00F8268C /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		ADB6895B2326708E006D4E2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADB6895E2326708E006D4E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADB689602326708E006D4E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF08550127AF7D7300718E94 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		BF08550427AF7E2400718E94 /* BillBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillBrain.swift; sourceTree = "<group>"; };
 		BF4C1D9727AE235A00F8268C /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,13 +64,31 @@
 			children = (
 				ADB689522326708D006D4E2B /* AppDelegate.swift */,
 				ADB689542326708D006D4E2B /* SceneDelegate.swift */,
+				BF08550327AF7E0500718E94 /* Model */,
+				BF08550027AF7D4E00718E94 /* View */,
 				BF4C1D9627AE22BF00F8268C /* Controller */,
-				ADB689582326708D006D4E2B /* Main.storyboard */,
 				ADB6895B2326708E006D4E2B /* Assets.xcassets */,
 				ADB6895D2326708E006D4E2B /* LaunchScreen.storyboard */,
 				ADB689602326708E006D4E2B /* Info.plist */,
 			);
 			path = Tipsy;
+			sourceTree = "<group>";
+		};
+		BF08550027AF7D4E00718E94 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADB689582326708D006D4E2B /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF08550327AF7E0500718E94 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF08550127AF7D7300718E94 /* Bill.swift */,
+				BF08550427AF7E2400718E94 /* BillBrain.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BF4C1D9627AE22BF00F8268C /* Controller */ = {
@@ -150,7 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB689572326708D006D4E2B /* CalculatorViewController.swift in Sources */,
+				BF08550227AF7D7300718E94 /* Bill.swift in Sources */,
 				ADB689532326708D006D4E2B /* AppDelegate.swift in Sources */,
+				BF08550527AF7E2400718E94 /* BillBrain.swift in Sources */,
 				ADB689552326708D006D4E2B /* SceneDelegate.swift in Sources */,
 				BF4C1D9827AE235A00F8268C /* ResultsViewController.swift in Sources */,
 			);

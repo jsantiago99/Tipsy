@@ -17,8 +17,7 @@ class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var splitNumberlabel: UILabel!
         
-    var billTotal : Double?
-    var splitTotal : Double?
+    var billBrain = BillBrain()
 
     @IBAction func tipChanged(_ sender: UIButton) {
         billTextField.endEditing(true)
@@ -45,27 +44,16 @@ class CalculatorViewController: UIViewController {
     
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        if (billTextField != nil) {
-            billTotal = Double(billTextField.text!)
-            if tenPctLabel.isSelected {
-                billTotal! += billTotal! * 0.1
-            } else if (twentyPctButton.isSelected) {
-                billTotal! += billTotal! * 0.2
-            }
-            
-            splitTotal = billTotal! / Double(splitNumberlabel.text!)!
-            
-            print(String(format: "%.2f", splitTotal!))
+        billBrain.checkTextField(billTextField: billTextField, zeroPctLabel: ZeroPctLabel.isSelected, tenPctLabel: tenPctLabel.isSelected, twentyPctButton: twentyPctButton.isSelected, splitNumberLabel: splitNumberlabel)
             performSegue(withIdentifier: "goToResult", sender: self)
             
         }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "goToResult") {
             let destinationVC = segue.destination as! ResultsViewController
-            destinationVC.totalValue = String(format: "%.2f", splitTotal!)
-            destinationVC.settingsValue = "It works"
+            destinationVC.totalValue = String(format: "%.2f", billBrain.getSplitTotal())
+            destinationVC.settingsValue = billBrain.getSettingsString()
             
         }
     }
